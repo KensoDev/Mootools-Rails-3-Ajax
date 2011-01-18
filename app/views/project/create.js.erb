@@ -1,0 +1,4 @@
+<% flash.discard %>
+var listItem = new Element("li", { html: '<%= escape_javascript @project.name %>'});
+
+listItem.inject($("projects_list"));
