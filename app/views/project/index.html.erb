@@ -1,0 +1,16 @@
+<h1>Project List</h1>
+<ul id="projects_list">
+	<% @projects.each do |project|%>
+	<li>
+		<%= project.name%>
+	</li>	
+	<%end%>
+</ul>
+
+<% form_for @project, :url => create_project_url, :remote => true do |f| -%>
+  <p>
+  	<%= f.label :name, "Name" %>
+	<%= f.text_field :name %>
+  </p>
+<%= f.submit "Create Project", :disable_with => 'Creating Project...' %>
+<% end -%>
